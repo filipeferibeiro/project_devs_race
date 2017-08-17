@@ -1,6 +1,7 @@
 package Pk_PDR;
 
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class NewProject extends javax.swing.JFrame {
     
@@ -76,6 +77,9 @@ public class NewProject extends javax.swing.JFrame {
         imgCancel.setBackground(new java.awt.Color(18, 34, 81));
         imgCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pk_PDR/images/buttonCancel.png"))); // NOI18N
         imgCancel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imgCancelMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 imgCancelMouseEntered(evt);
             }
@@ -103,6 +107,9 @@ public class NewProject extends javax.swing.JFrame {
         imgEnviar.setBackground(new java.awt.Color(18, 34, 81));
         imgEnviar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pk_PDR/images/buttonEnv.png"))); // NOI18N
         imgEnviar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imgEnviarMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 imgEnviarMouseEntered(evt);
             }
@@ -198,6 +205,15 @@ public class NewProject extends javax.swing.JFrame {
     private void imgCancelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgCancelMouseExited
         changeColorCancel("Exited", imgCancel);
     }//GEN-LAST:event_imgCancelMouseExited
+
+    private void imgCancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgCancelMouseClicked
+        this.setVisible(false);
+    }//GEN-LAST:event_imgCancelMouseClicked
+
+    private void imgEnviarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgEnviarMouseClicked
+        JOptionPane.showMessageDialog(null, "Você ainda não pode adicionar um novo projeto...");   
+        this.setVisible(false);
+    }//GEN-LAST:event_imgEnviarMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
