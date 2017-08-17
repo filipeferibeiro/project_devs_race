@@ -1,9 +1,22 @@
 package Pk_PDR;
 
+import java.awt.event.WindowEvent;
+import javafx.scene.paint.Color;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class PDR_Home extends javax.swing.JFrame {
+    
+    public void changeColor(String option, javax.swing.JPanel button) {
+        if (option.equals("Entered")){
+            button.setBackground(java.awt.Color.decode("#12679F"));
+        }
+        else if (option.equals("Exited")) {
+            button.setBackground(java.awt.Color.decode("#122251"));
+        }
+    }
+    
+    //public void changeColorClick (String button)
 
     public PDR_Home() {
         initComponents();
@@ -20,19 +33,18 @@ public class PDR_Home extends javax.swing.JFrame {
         pnMarca = new javax.swing.JPanel();
         lblProjetosIcon = new javax.swing.JLabel();
         lblProjetosNome = new javax.swing.JLabel();
-        btProjetos1 = new javax.swing.JPanel();
+        btPontGeral = new javax.swing.JPanel();
         pnMarca1 = new javax.swing.JPanel();
         lblPontGeral = new javax.swing.JLabel();
         lblPontGeralNome = new javax.swing.JLabel();
-        btProjetos3 = new javax.swing.JPanel();
-        pnMarca3 = new javax.swing.JPanel();
+        btOutDados = new javax.swing.JPanel();
+        pnMarca2 = new javax.swing.JPanel();
         lblOutDadosIcon = new javax.swing.JLabel();
         lblOutDadosNome = new javax.swing.JLabel();
         lbl_NewProject = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Project Devs Race");
-        setPreferredSize(new java.awt.Dimension(1000, 600));
         setResizable(false);
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
@@ -43,8 +55,19 @@ public class PDR_Home extends javax.swing.JFrame {
 
         lblPDR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pk_PDR/images/projectIcon.png"))); // NOI18N
 
-        btProjetos.setBackground(new java.awt.Color(18, 56, 101));
+        btProjetos.setBackground(new java.awt.Color(18, 45, 87));
         btProjetos.setPreferredSize(new java.awt.Dimension(250, 45));
+        btProjetos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btProjetosMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btProjetosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btProjetosMouseExited(evt);
+            }
+        });
 
         pnMarca.setBackground(new java.awt.Color(18, 92, 157));
         pnMarca.setPreferredSize(new java.awt.Dimension(3, 50));
@@ -88,8 +111,19 @@ public class PDR_Home extends javax.swing.JFrame {
                     .addComponent(lblProjetosNome)))
         );
 
-        btProjetos1.setBackground(new java.awt.Color(18, 45, 87));
-        btProjetos1.setPreferredSize(new java.awt.Dimension(250, 45));
+        btPontGeral.setBackground(new java.awt.Color(18, 45, 87));
+        btPontGeral.setPreferredSize(new java.awt.Dimension(250, 45));
+        btPontGeral.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btPontGeralMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btPontGeralMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btPontGeralMouseExited(evt);
+            }
+        });
 
         pnMarca1.setBackground(new java.awt.Color(18, 45, 87));
         pnMarca1.setPreferredSize(new java.awt.Dimension(3, 50));
@@ -111,11 +145,11 @@ public class PDR_Home extends javax.swing.JFrame {
         lblPontGeralNome.setForeground(new java.awt.Color(255, 255, 255));
         lblPontGeralNome.setText("Pontuação Geral");
 
-        javax.swing.GroupLayout btProjetos1Layout = new javax.swing.GroupLayout(btProjetos1);
-        btProjetos1.setLayout(btProjetos1Layout);
-        btProjetos1Layout.setHorizontalGroup(
-            btProjetos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btProjetos1Layout.createSequentialGroup()
+        javax.swing.GroupLayout btPontGeralLayout = new javax.swing.GroupLayout(btPontGeral);
+        btPontGeral.setLayout(btPontGeralLayout);
+        btPontGeralLayout.setHorizontalGroup(
+            btPontGeralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btPontGeralLayout.createSequentialGroup()
                 .addComponent(pnMarca1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblPontGeral)
@@ -123,30 +157,41 @@ public class PDR_Home extends javax.swing.JFrame {
                 .addComponent(lblPontGeralNome)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
-        btProjetos1Layout.setVerticalGroup(
-            btProjetos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        btPontGeralLayout.setVerticalGroup(
+            btPontGeralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(pnMarca1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-            .addGroup(btProjetos1Layout.createSequentialGroup()
+            .addGroup(btPontGeralLayout.createSequentialGroup()
                 .addGap(6, 6, 6)
-                .addGroup(btProjetos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(btPontGeralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblPontGeral)
                     .addComponent(lblPontGeralNome)))
         );
 
-        btProjetos3.setBackground(new java.awt.Color(18, 45, 87));
-        btProjetos3.setPreferredSize(new java.awt.Dimension(250, 45));
+        btOutDados.setBackground(new java.awt.Color(18, 45, 87));
+        btOutDados.setPreferredSize(new java.awt.Dimension(250, 45));
+        btOutDados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btOutDadosMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btOutDadosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btOutDadosMouseExited(evt);
+            }
+        });
 
-        pnMarca3.setBackground(new java.awt.Color(18, 45, 87));
-        pnMarca3.setPreferredSize(new java.awt.Dimension(3, 50));
+        pnMarca2.setBackground(new java.awt.Color(18, 45, 87));
+        pnMarca2.setPreferredSize(new java.awt.Dimension(3, 50));
 
-        javax.swing.GroupLayout pnMarca3Layout = new javax.swing.GroupLayout(pnMarca3);
-        pnMarca3.setLayout(pnMarca3Layout);
-        pnMarca3Layout.setHorizontalGroup(
-            pnMarca3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout pnMarca2Layout = new javax.swing.GroupLayout(pnMarca2);
+        pnMarca2.setLayout(pnMarca2Layout);
+        pnMarca2Layout.setHorizontalGroup(
+            pnMarca2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 3, Short.MAX_VALUE)
         );
-        pnMarca3Layout.setVerticalGroup(
-            pnMarca3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        pnMarca2Layout.setVerticalGroup(
+            pnMarca2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
@@ -156,24 +201,24 @@ public class PDR_Home extends javax.swing.JFrame {
         lblOutDadosNome.setForeground(new java.awt.Color(255, 255, 255));
         lblOutDadosNome.setText("Outros Dados");
 
-        javax.swing.GroupLayout btProjetos3Layout = new javax.swing.GroupLayout(btProjetos3);
-        btProjetos3.setLayout(btProjetos3Layout);
-        btProjetos3Layout.setHorizontalGroup(
-            btProjetos3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btProjetos3Layout.createSequentialGroup()
-                .addComponent(pnMarca3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout btOutDadosLayout = new javax.swing.GroupLayout(btOutDados);
+        btOutDados.setLayout(btOutDadosLayout);
+        btOutDadosLayout.setHorizontalGroup(
+            btOutDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btOutDadosLayout.createSequentialGroup()
+                .addComponent(pnMarca2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblOutDadosIcon)
                 .addGap(4, 4, 4)
                 .addComponent(lblOutDadosNome)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
-        btProjetos3Layout.setVerticalGroup(
-            btProjetos3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnMarca3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-            .addGroup(btProjetos3Layout.createSequentialGroup()
+        btOutDadosLayout.setVerticalGroup(
+            btOutDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnMarca2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addGroup(btOutDadosLayout.createSequentialGroup()
                 .addGap(6, 6, 6)
-                .addGroup(btProjetos3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(btOutDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblOutDadosIcon)
                     .addComponent(lblOutDadosNome)))
         );
@@ -182,13 +227,13 @@ public class PDR_Home extends javax.swing.JFrame {
         barraLateral.setLayout(barraLateralLayout);
         barraLateralLayout.setHorizontalGroup(
             barraLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btProjetos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btPontGeral, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btOutDados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(barraLateralLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(lblPDR)
                 .addContainerGap(30, Short.MAX_VALUE))
-            .addComponent(btProjetos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btProjetos1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btProjetos3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         barraLateralLayout.setVerticalGroup(
             barraLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,9 +243,9 @@ public class PDR_Home extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(btProjetos, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(btProjetos1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btPontGeral, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(btProjetos3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btOutDados, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(388, Short.MAX_VALUE))
         );
 
@@ -251,9 +296,53 @@ public class PDR_Home extends javax.swing.JFrame {
         //pj.setNome(jTextField1.getText());
         //System.out.println(pj.getNome());
     }//GEN-LAST:event_lbl_NewProjectMouseClicked
-    
-    
-    
+
+    private void btProjetosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btProjetosMouseClicked
+        pnMarca.setBackground(java.awt.Color.decode("#125C9D"));
+        pnMarca1.setBackground(java.awt.Color.decode("#122D57"));
+        pnMarca2.setBackground(java.awt.Color.decode("#122D57"));
+        
+        JOptionPane.showMessageDialog(null, "Você ainda não pode adicionar um novo projeto...");
+        //this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+        
+    }//GEN-LAST:event_btProjetosMouseClicked
+
+    private void btProjetosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btProjetosMouseEntered
+        changeColor("Entered", btProjetos);
+    }//GEN-LAST:event_btProjetosMouseEntered
+
+    private void btProjetosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btProjetosMouseExited
+        changeColor("Exited", btProjetos);
+    }//GEN-LAST:event_btProjetosMouseExited
+
+    private void btPontGeralMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btPontGeralMouseEntered
+        changeColor("Entered", btPontGeral);
+    }//GEN-LAST:event_btPontGeralMouseEntered
+
+    private void btPontGeralMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btPontGeralMouseExited
+        changeColor("Exited", btPontGeral);
+    }//GEN-LAST:event_btPontGeralMouseExited
+
+    private void btOutDadosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btOutDadosMouseEntered
+        changeColor("Entered", btOutDados);
+    }//GEN-LAST:event_btOutDadosMouseEntered
+
+    private void btOutDadosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btOutDadosMouseExited
+        changeColor("Exited", btOutDados);
+    }//GEN-LAST:event_btOutDadosMouseExited
+
+    private void btPontGeralMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btPontGeralMouseClicked
+        pnMarca.setBackground(java.awt.Color.decode("#122D57"));
+        pnMarca1.setBackground(java.awt.Color.decode("#125C9D"));
+        pnMarca2.setBackground(java.awt.Color.decode("#122D57"));
+    }//GEN-LAST:event_btPontGeralMouseClicked
+
+    private void btOutDadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btOutDadosMouseClicked
+        pnMarca.setBackground(java.awt.Color.decode("#122D57"));
+        pnMarca1.setBackground(java.awt.Color.decode("#122D57"));
+        pnMarca2.setBackground(java.awt.Color.decode("#125C9D"));
+    }//GEN-LAST:event_btOutDadosMouseClicked
+        
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -287,15 +376,12 @@ public class PDR_Home extends javax.swing.JFrame {
 
     }
     
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel barraLateral;
     private javax.swing.JPanel bg;
+    private javax.swing.JPanel btOutDados;
+    private javax.swing.JPanel btPontGeral;
     private javax.swing.JPanel btProjetos;
-    private javax.swing.JPanel btProjetos1;
-    private javax.swing.JPanel btProjetos2;
-    private javax.swing.JPanel btProjetos3;
-    private javax.swing.JPanel btProjetos4;
     private javax.swing.JLabel lblOutDadosIcon;
     private javax.swing.JLabel lblOutDadosNome;
     private javax.swing.JLabel lblPDR;
@@ -307,7 +393,6 @@ public class PDR_Home extends javax.swing.JFrame {
     private javax.swing.JPanel pnMarca;
     private javax.swing.JPanel pnMarca1;
     private javax.swing.JPanel pnMarca2;
-    private javax.swing.JPanel pnMarca3;
-    private javax.swing.JPanel pnMarca4;
     // End of variables declaration//GEN-END:variables
+
 }
