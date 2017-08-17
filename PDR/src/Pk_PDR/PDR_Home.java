@@ -45,6 +45,7 @@ public class PDR_Home extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Project Devs Race");
+        setLocationByPlatform(true);
         setResizable(false);
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
@@ -292,6 +293,7 @@ public class PDR_Home extends javax.swing.JFrame {
     //Ação para o botão de Novo Projeto
     private void lbl_NewProjectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_NewProjectMouseClicked
         JOptionPane.showMessageDialog(null, "Você ainda não pode adicionar um novo projeto...");
+        new NewProject().setVisible(true);
         //Projeto pj = new Projeto();
         //pj.setNome(jTextField1.getText());
         //System.out.println(pj.getNome());
