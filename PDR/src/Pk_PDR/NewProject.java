@@ -30,6 +30,8 @@ public class NewProject extends javax.swing.JFrame {
     public NewProject() {
         initComponents();
         this.setLocationRelativeTo(null);
+        ImageIcon icon = new ImageIcon(getClass().getResource("/Pk_PDR/images/icons8_User_Groups_32.png"));
+        this.setIconImage(icon.getImage());
     }
     
     @SuppressWarnings("unchecked")
@@ -70,7 +72,7 @@ public class NewProject extends javax.swing.JFrame {
 
         lblGitHub.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lblGitHub.setForeground(new java.awt.Color(255, 255, 255));
-        lblGitHub.setText("GITHUB");
+        lblGitHub.setText("GITHUB - LINK");
 
         btCancel.setBackground(new java.awt.Color(18, 34, 81));
 

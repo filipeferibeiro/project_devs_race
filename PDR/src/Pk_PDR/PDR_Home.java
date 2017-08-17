@@ -2,6 +2,7 @@ package Pk_PDR;
 
 import java.awt.event.WindowEvent;
 import javafx.scene.paint.Color;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -21,6 +22,8 @@ public class PDR_Home extends javax.swing.JFrame {
     public PDR_Home() {
         initComponents();
         this.setLocationRelativeTo(null);
+        ImageIcon icon = new ImageIcon(getClass().getResource("/Pk_PDR/images/icons8_User_Groups_32.png"));
+        this.setIconImage(icon.getImage());
     }
     
     @SuppressWarnings("unchecked")
@@ -304,7 +307,7 @@ public class PDR_Home extends javax.swing.JFrame {
         pnMarca1.setBackground(java.awt.Color.decode("#122D57"));
         pnMarca2.setBackground(java.awt.Color.decode("#122D57"));
         
-        JOptionPane.showMessageDialog(null, "Você ainda não pode adicionar um novo projeto...");        
+        //JOptionPane.showMessageDialog(null, "Você ainda não pode adicionar um novo projeto...");        
     }//GEN-LAST:event_btProjetosMouseClicked
 
     private void btProjetosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btProjetosMouseEntered
