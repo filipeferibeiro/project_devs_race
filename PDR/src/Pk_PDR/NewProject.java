@@ -28,6 +28,7 @@ public class NewProject extends javax.swing.JFrame {
     
     public NewProject() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
     
     @SuppressWarnings("unchecked")

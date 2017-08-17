@@ -20,6 +20,7 @@ public class PDR_Home extends javax.swing.JFrame {
 
     public PDR_Home() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
     
     @SuppressWarnings("unchecked")
