@@ -26,10 +26,8 @@ public class PDR_Home extends javax.swing.JFrame {
         this.setIconImage(icon.getImage());
     }
     
-    public void addProj (String nome) {
-        listProj.addProjeto(new Projeto(nome));
-        
-        listProj.printProj();
+    public void addProj (Projeto proj) {
+        listProj.addProjeto(proj);
     }
     
     @SuppressWarnings("unchecked")
@@ -304,12 +302,6 @@ public class PDR_Home extends javax.swing.JFrame {
     private void lbl_NewProjectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_NewProjectMouseClicked
         new NewProject(this).setVisible(true);
         
-        
-        //listProj.addProjeto(new Projeto("tst"));
-        
-        //Projeto pj = new Projeto();
-        //pj.setNome(jTextField1.getText());
-        //System.out.println(pj.getNome());
     }//GEN-LAST:event_lbl_NewProjectMouseClicked
 
     private void btProjetosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btProjetosMouseClicked
@@ -317,7 +309,6 @@ public class PDR_Home extends javax.swing.JFrame {
         pnMarca1.setBackground(java.awt.Color.decode("#122D57"));
         pnMarca2.setBackground(java.awt.Color.decode("#122D57"));
         
-        //JOptionPane.showMessageDialog(null, "Você ainda não pode adicionar um novo projeto...");        
     }//GEN-LAST:event_btProjetosMouseClicked
 
     private void btProjetosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btProjetosMouseEntered

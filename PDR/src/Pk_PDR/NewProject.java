@@ -215,7 +215,8 @@ public class NewProject extends javax.swing.JFrame {
 
     private void imgEnviarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgEnviarMouseClicked
         JOptionPane.showMessageDialog(null, "Você ainda não pode adicionar um novo projeto...");
-        home.addProj("Hello");
+        Projeto proj = new Projeto("hahah");
+        home.addProj(proj);
         this.setVisible(false);
     }//GEN-LAST:event_imgEnviarMouseClicked
 
