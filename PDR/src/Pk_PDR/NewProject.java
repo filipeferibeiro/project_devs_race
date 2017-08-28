@@ -26,12 +26,13 @@ public class NewProject extends javax.swing.JFrame {
             button.setIcon(icon);
         }
     }
-    
-    public NewProject() {
+    PDR_Home home;
+    public NewProject(PDR_Home homeWindow) {
         initComponents();
         this.setLocationRelativeTo(null);
         ImageIcon icon = new ImageIcon(getClass().getResource("/Pk_PDR/images/icons8_User_Groups_32.png"));
         this.setIconImage(icon.getImage());
+        home = homeWindow;
     }
     
     @SuppressWarnings("unchecked")
@@ -213,7 +214,8 @@ public class NewProject extends javax.swing.JFrame {
     }//GEN-LAST:event_imgCancelMouseClicked
 
     private void imgEnviarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgEnviarMouseClicked
-        JOptionPane.showMessageDialog(null, "Você ainda não pode adicionar um novo projeto...");   
+        JOptionPane.showMessageDialog(null, "Você ainda não pode adicionar um novo projeto...");
+        home.addProj("Hello");
         this.setVisible(false);
     }//GEN-LAST:event_imgEnviarMouseClicked
 
@@ -244,7 +246,7 @@ public class NewProject extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {              
-                new NewProject().setVisible(true);    
+                //new NewProject().setVisible(true);    
             }
         });
     }

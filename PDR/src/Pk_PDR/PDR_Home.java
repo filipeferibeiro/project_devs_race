@@ -26,6 +26,12 @@ public class PDR_Home extends javax.swing.JFrame {
         this.setIconImage(icon.getImage());
     }
     
+    public void addProj (String nome) {
+        listProj.addProjeto(new Projeto(nome));
+        
+        listProj.printProj();
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -296,7 +302,11 @@ public class PDR_Home extends javax.swing.JFrame {
 
     //Ação para o botão de Novo Projeto
     private void lbl_NewProjectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_NewProjectMouseClicked
-        new NewProject().setVisible(true);
+        new NewProject(this).setVisible(true);
+        
+        
+        //listProj.addProjeto(new Projeto("tst"));
+        
         //Projeto pj = new Projeto();
         //pj.setNome(jTextField1.getText());
         //System.out.println(pj.getNome());
@@ -371,6 +381,7 @@ public class PDR_Home extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+                
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new PDR_Home().setVisible(true);
@@ -397,5 +408,5 @@ public class PDR_Home extends javax.swing.JFrame {
     private javax.swing.JPanel pnMarca1;
     private javax.swing.JPanel pnMarca2;
     // End of variables declaration//GEN-END:variables
-
+    ListaProjetos listProj = new ListaProjetos();
 }
