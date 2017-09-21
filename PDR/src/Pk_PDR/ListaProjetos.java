@@ -44,10 +44,13 @@ public class ListaProjetos {
     }
     
     public void printProj() {
+        int i = 0;
         NoProjetos tempProj = referencia;
         while (tempProj != null) {
-            System.out.println(tempProj.getNo().getNome());
+            System.out.println(i + " - " + tempProj.getNo().getNome());
             tempProj = tempProj.getProximo();
         }
     }
+    
+    
 }

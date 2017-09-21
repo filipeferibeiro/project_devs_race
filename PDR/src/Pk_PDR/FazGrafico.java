@@ -1,9 +1,13 @@
+package Pk_PDR;
+
+import Pk_PDR.Projeto;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Graphics;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import javax.swing.JFrame;
@@ -11,23 +15,30 @@ import javax.swing.JPanel;
 
 
 public class FazGrafico {
+    
+    private List<GraficoDeBarras.Dado> dados;
+    private static BufferedImage imagem;
+    
+    public FazGrafico (ArrayList <Projeto> projetos) {
+        for (int i = 0; i < projetos.size(); i++) {
+            GraficoDeBarras.Dado dado = new GraficoDeBarras.Dado(projetos.get(i).getLinhas(), projetos.get(i).getNome());
+            dados.add(dado);
+        }
+        this.imagem = GraficoDeBarras.desenharTamanhoFixo(500, 180, dados);
+        
+        mostraImagem(imagem);
+    }
 
-    public static void main(String[] args) {
-        List<GraficoDeBarras.Dado> dados = Arrays.asList(
-                new GraficoDeBarras.Dado(6, "Projeto_1"),
-                new GraficoDeBarras.Dado(9, "Projeto_2"),
-                new GraficoDeBarras.Dado(3, "Projeto_3"),
-                new GraficoDeBarras.Dado(1, "Projeto_4"),
-                new GraficoDeBarras.Dado(12, "Projeto_5"),
-                new GraficoDeBarras.Dado(-1, "Projeto_6"));
-        BufferedImage imagem = GraficoDeBarras.desenharTamanhoFixo(500, 180, dados);
+    /*public static void main(String[] args) {
+        
+        
         EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                mostraImagem(imagem);
+                
             }
         });
-    }
+    }*/
 
     private static void mostraImagem(BufferedImage imagem) {
         JFrame jf = new JFrame("Pontuação por projeto");

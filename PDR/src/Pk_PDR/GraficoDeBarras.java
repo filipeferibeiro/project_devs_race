@@ -1,3 +1,6 @@
+package Pk_PDR;
+
+import Pk_PDR.Projeto;
 import java.awt.Color;
 import java.awt.FontMetrics;
 import java.awt.Graphics2D;
